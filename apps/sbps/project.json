@@ -1,0 +1,26 @@
+{
+  "name": "sbps",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/sbps/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "sbps:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sbps:build:development"
+        },
+        "production": {
+          "buildTarget": "sbps:build:production"
+        }
+      }
+    }
+  }
+}
